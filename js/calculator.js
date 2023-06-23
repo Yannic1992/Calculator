@@ -1,5 +1,6 @@
 let displayValue = "";
 let decimalApplied = false;
+let calculationDone = false;
 let inputArray = [];
 
 function add(a, b){
@@ -37,7 +38,6 @@ function operate(){
                 x -= 1;
             }
         }
-
         for(let x = 0; x <= inputArray.length; x++){
             console.log("x = " + x + " ; Element: "+ inputArray[x]);
             if(inputArray[x] == "+"){
@@ -54,10 +54,21 @@ function operate(){
         }
     }
     document.querySelector(".display").textContent = displayValue + "=" + inputArray[0];
+    displayValue = inputArray[0];
+    calculationDone = true;
+    console.log(displayValue);
 }
 
 function clickInput(input){
-    displayValue = document.querySelector(".display").textContent;
+    if(calculationDone == true && (input == "*" || input == "/" || 
+                                    input == "+" || input == "-")){
+        calculationDone = false;
+        document.querySelector(".display").textContent = displayValue + "";
+    }else if(calculationDone == true && !isNaN(input)){
+        calculationDone = false;
+        document.querySelector(".display").textContent = "";
+    }
+    displayValue = displayValue + document.querySelector(".display").textContent;
     //console.log(displayValue.charAt(displayValue.length-1));
     //console.log(displayValue.charCodeAt(displayValue.length-1));
     if(Number.isInteger(input)){
