@@ -60,8 +60,7 @@ function operate(){
 }
 
 function clickInput(input){
-    if(calculationDone == true && (input == "*" || input == "/" || 
-                                    input == "+" || input == "-")){
+    if(calculationDone == true && isNaN(input)){
         calculationDone = false;
         document.querySelector(".display").textContent = displayValue + "";
     }else if(calculationDone == true && !isNaN(input)){
