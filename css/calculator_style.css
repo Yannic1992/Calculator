@@ -42,6 +42,7 @@ button {
     border-radius: 8px;
     background-color: lightgray;
     height: 128px;
+    padding: 2px 4px;
     margin: 8px;
 }
 
