@@ -83,3 +83,15 @@ function clickInput(input){
     }
     displayValue = document.querySelector(".display").textContent;
 }
+
+function clearAll(){
+    displayValue = "";
+    decimalApplied = false;
+    inputArray.length = 0;
+    document.querySelector(".display").textContent = "";
+}
+
+function backspace(){
+    displayValue = displayValue.slice(0, -1);
+    document.querySelector(".display").textContent = displayValue;
+}
