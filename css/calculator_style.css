@@ -1,5 +1,96 @@
+* {
+    /*border: 1px solid red;*/
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    background-color: #526266;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    flex: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    background-color: #f5efe8;
+    border-radius: 8px;
+    font-size: 24px;
+    width: 56px;
+    height: 48px;
+    padding: 0px;
+}
+.calculator {
+    border: 2px solid black;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 350px;
+    height: 500px;
+    background-color: #293133;
+}
+
 .display {
-    border: 1px solid black;
+    border: 2px solid black;
+    border-radius: 8px;
     background-color: lightgray;
-    height: 18px;
+    height: 128px;
+    margin: 8px;
+}
+
+.all-buttons {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.numbers-and-symbols {
+    display:flex;
+    justify-content: space-between;
+    
+}
+
+.numbers {
+    display: flex;
+    flex-direction: column;
+}
+
+.row-7-8-9,
+.row-4-5-6,
+.row-1-2-3,
+.row-0-dot {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 8px 0px;
+}
+
+.math-symbols {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.equals-button {
+    background-color: #BDB8B3;
+}
+
+.deletion {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.deletion .backspace-button {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 32px;
 }

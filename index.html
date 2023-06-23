@@ -8,25 +8,46 @@
     <title>Calculator</title>
 </head>
 <body>
-    <div class="display"></div>
-    <button class="numberButton seven" onclick="clickInput(7)">7</button>
-    <button class="numberButton eight" onclick="clickInput(8)">8</button>
-    <button class="numberButton nine" onclick="clickInput(9)">9</button><br>
-    <button class="numberButton four" onclick="clickInput(4)">4</button>
-    <button class="numberButton five" onclick="clickInput(5)">5</button>
-    <button class="numberButton six" onclick="clickInput(6)">6</button><br>
-    <button class="numberButton one" onclick="clickInput(1)">1</button>
-    <button class="numberButton two" onclick="clickInput(2)">2</button>
-    <button class="numberButton three" onclick="clickInput(3)">3</button><br>
-    <button class="numberButton zero" onclick="clickInput(0)">0</button>
-    <button class="decimalPoint" onclick="clickInput('.')">.</button><br></br>
-    <button class="addButton" onclick="clickInput('+')">+</button>
-    <button class="subtractButton" onclick="clickInput('-')">-</button>
-    <button class="multiplyButton" onclick="clickInput('*')">×</button>
-    <button class="divideButton" onclick="clickInput('/')">÷</button>
-    <button class="equalsButton" onclick="operate()">=</button>
-    <button class="clearButton">CLEAR ALL</button>
-    <button class="deleteButton">DELETE</button>
+    <div class="calculator">
+        <div class="display"></div>
+        <div class="all-buttons">
+            <div class="numbers-and-symbols">
+                <div class="numbers">
+                    <div class="row-7-8-9">
+                        <button class="number-button seven" onclick="clickInput(7)">7</button>
+                        <button class="number-button eight" onclick="clickInput(8)">8</button>
+                        <button class="number-button nine" onclick="clickInput(9)">9</button>
+                    </div>
+                    <div class="row-4-5-6">
+                        <button class="number-button four" onclick="clickInput(4)">4</button>
+                        <button class="number-button five" onclick="clickInput(5)">5</button>
+                        <button class="number-button six" onclick="clickInput(6)">6</button>
+                    </div>
+                    <div class="row-1-2-3">
+                        <button class="number-button one" onclick="clickInput(1)">1</button>
+                        <button class="number-button two" onclick="clickInput(2)">2</button>
+                        <button class="number-button three" onclick="clickInput(3)">3</button>
+                    </div>
+                    <div class="row-0-dot">
+                        <button class="number-button zero" onclick="clickInput(0)">0</button>
+                        <button class="decimal-point" onclick="clickInput('.')">.</button>
+                    </div>
+                </div>
+                <div class="math-symbols">
+                    <button class="divide-button" onclick="clickInput('/')">÷</button>
+                    <button class="multiply-button" onclick="clickInput('*')">×</button>
+                    <button class="subtract-button" onclick="clickInput('-')">-</button>
+                    <button class="add-button" onclick="clickInput('+')">+</button>
+            
+                </div>
+            </div>
+            <div class="deletion">
+                <button class="clear-all-button">AC</button>
+                <button class="backspace-button">&#9003</button>
+                <button class="equals-button" onclick="operate()">=</button>
+            </div>
+        </div>
+    </div>
 
     <script src="js/calculator.js"></script>
 </body>
