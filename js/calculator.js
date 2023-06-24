@@ -56,18 +56,23 @@ function operate(){
         }
         document.querySelector(".display").innerText = displayValue + "\n=" + inputArray[0];
         displayValue = inputArray[0];
+        console.log(isFinite(displayValue));
         calculationDone = true;
         //console.log(displayValue);
     }
 }
 
 function clickInput(input){
-    if(calculationDone == true && isNaN(input)){
-        calculationDone = false;
-        document.querySelector(".display").textContent = displayValue + "";
-    }else if(calculationDone == true && !isNaN(input)){
-        calculationDone = false;
-        document.querySelector(".display").textContent = "";
+    if(calculationDone == true && isNaN(input) && isFinite(displayValue)) {
+        if(input == "."){
+            clearAll();
+        }else{
+            calculationDone = false;
+            document.querySelector(".display").textContent = displayValue;
+        }
+    }else if((calculationDone == true && !isNaN(input)) || 
+    (calculationDone == true && !isFinite(displayValue))){
+        clearAll();
     }
     displayValue = displayValue + document.querySelector(".display").textContent;
     //console.log(displayValue.charAt(displayValue.length-1));
@@ -99,6 +104,7 @@ function clickInput(input){
 function clearAll(){
     displayValue = "";
     decimalApplied = false;
+    calculationDone = false;
     inputArray.length = 0;
     document.querySelector(".display").textContent = "";
 }
