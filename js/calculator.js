@@ -20,35 +20,35 @@ function divide(a, b){
 }
 
 function operate(){
-    console.log(displayValue);
+    //console.log(displayValue);
     inputArray = displayValue.split(/([+*/]|(?<=\d)-)/g);
-    console.log(inputArray);
+    //console.log(inputArray);
     while(inputArray.length > 1){
         for(let x = 0; x <= inputArray.length; x++){
-            console.log("x = " + x + " ; Element: "+ inputArray[x]);
+            //console.log("x = " + x + " ; Element: "+ inputArray[x]);
             if(inputArray[x] == "*"){
                 inputArray[x-1] = multiply(Number(inputArray[x-1]), Number(inputArray[x+1]));
                 inputArray.splice(x, 2);
-                console.log(inputArray);
+                //console.log(inputArray);
                 x -= 1;
             }else if(inputArray[x] == "/"){
                 inputArray[x-1] = divide(Number(inputArray[x-1]), Number(inputArray[x+1]));
                 inputArray.splice(x, 2);
-                console.log(inputArray);
+                //console.log(inputArray);
                 x -= 1;
             }
         }
         for(let x = 0; x <= inputArray.length; x++){
-            console.log("x = " + x + " ; Element: "+ inputArray[x]);
+            //console.log("x = " + x + " ; Element: "+ inputArray[x]);
             if(inputArray[x] == "+"){
                 inputArray[x-1] = add(Number(inputArray[x-1]), Number(inputArray[x+1]));
                 inputArray.splice(x, 2);
-                console.log(inputArray);
+                //console.log(inputArray);
                 x -= 1;
             }else if(inputArray[x] == "-"){
                 inputArray[x-1] = subtract(Number(inputArray[x-1]), Number(inputArray[x+1]));
                 inputArray.splice(x, 2);
-                console.log(inputArray);
+                //console.log(inputArray);
                 x -= 1;
             }
         }
@@ -56,7 +56,7 @@ function operate(){
     document.querySelector(".display").textContent = displayValue + "=" + inputArray[0];
     displayValue = inputArray[0];
     calculationDone = true;
-    console.log(displayValue);
+    //console.log(displayValue);
 }
 
 function clickInput(input){
@@ -105,3 +105,21 @@ function backspace(){
     displayValue = displayValue.slice(0, -1);
     document.querySelector(".display").textContent = displayValue;
 }
+
+window.addEventListener("keydown", event => {
+    if(!isNaN(event.key)) {
+        clickInput(Number(event.key));
+    }else if(event.key == "+" || event.key == "-" || event.key == "*" || 
+    event.key == "/" || event.key == "."){
+        clickInput(event.key);
+    }else if(event.key == ","){
+        clickInput(".");
+    }else if(event.key == "Enter") {
+        operate();
+    }else if(event.key == "Backspace") {
+        backspace();
+    }else if(event.key == "Delete") {
+        clearAll();
+    }
+    console.log(typeof(event.key) + " " + event.key);
+});
