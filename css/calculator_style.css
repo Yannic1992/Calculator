@@ -19,12 +19,13 @@ body {
 }
 
 button {
+    font-family: "Courier New", monospace;
     background-color: #f5efe8;
     border-radius: 8px;
     font-size: 24px;
     width: 56px;
     height: 48px;
-    padding: 0px;
+    padding: 5px 0px 0px 0px;
 }
 .calculator {
     border: 2px solid black;
@@ -38,6 +39,7 @@ button {
 }
 
 .display {
+    font-family: "Courier New", monospace;
     border: 2px solid black;
     border-radius: 8px;
     background-color: lightgray;
@@ -93,5 +95,6 @@ button {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    font-size: 32px;
+    font-size: 38px;
+    padding: 0px 3px 0px 0px;
 }
