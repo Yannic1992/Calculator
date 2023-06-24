@@ -27,6 +27,7 @@ button {
     height: 48px;
     padding: 5px 0px 0px 0px;
 }
+
 .calculator {
     border: 2px solid black;
     border-radius: 8px;
@@ -40,6 +41,7 @@ button {
 
 .display {
     font-family: "Courier New", monospace;
+    overflow-wrap: break-word;
     border: 2px solid black;
     border-radius: 8px;
     background-color: lightgray;
@@ -57,7 +59,6 @@ button {
 .numbers-and-symbols {
     display:flex;
     justify-content: space-between;
-    
 }
 
 .numbers {
